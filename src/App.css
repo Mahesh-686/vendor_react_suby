@@ -289,3 +289,62 @@ h3 {
 .loaderSection {
     z-index: 10000;
 }
+
+/* Table Container */
+.overflow-x-auto {
+    overflow-x: auto;
+  }
+  
+  /* Table Styles */
+  table {
+    min-width: 100%;
+    border: 1px solid #d1d5db; /* gray-300 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  /* Table Header */
+  thead {
+    background-color: #f3f4f6; /* gray-100 */
+  }
+  
+  /* Table Headings */
+  th {
+    padding: 8px 16px;
+    border: 1px solid #d1d5db;
+    text-align: left;
+    font-weight: 600;
+  }
+  
+  /* Table Body */
+  tbody tr {
+    border-top: 1px solid #d1d5db;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  /* Hover Effect */
+  tbody tr:hover {
+    background-color: #f9fafb; /* gray-50 */
+    cursor: pointer;
+  }
+  
+  /* Table Data Cells */
+  td {
+    padding: 8px 16px;
+    border: 1px solid #d1d5db;
+  }
+  
+  /* Image Styling */
+  td img {
+    width: 56px; /* w-14 */
+    height: 56px; /* h-14 */
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+  }
+  
+  /* No Image Placeholder */
+  .text-gray-500 {
+    color: #6b7280;
+  }
+  
