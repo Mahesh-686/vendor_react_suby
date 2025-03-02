@@ -9,6 +9,7 @@ import AddProduct from '../components/forms/AddProduct';
 import Welcome from '../components/forms/Welcome';
 import AllProducts from '../components/AllProducts';
 import NotFound from '../components/Notfound';
+import GetAllFirms from '../components/forms/GetAllFirms';
 
 const LandinPage = () => {
   const [showLogin,setshowLogin]=useState(false)
@@ -19,6 +20,7 @@ const LandinPage = () => {
   const [showAllProducts, setShowAllProducts] = useState(false)
   const [showLogOut, setShowLogOut] = useState(false)
   const [showFirmTitle, setShowFirmTitle] = useState(true)
+  const [showAllFirms,setShowAllFirms] = useState(false);
 
   useEffect(()=>{
     const loginToken = localStorage.getItem('loginToken');
@@ -47,6 +49,7 @@ const LandinPage = () => {
       setShowLogOut(false)
       setShowFirmTitle(true)
       setshowWelcome(false)
+      setShowAllFirms(false)
   }
 
   const showLoginHandler=()=>{
@@ -56,6 +59,7 @@ const LandinPage = () => {
     setshowProduct(false)
     setshowWelcome(false)
     setShowAllProducts(false)
+    setShowAllFirms(false)
 
   }
   
@@ -66,6 +70,7 @@ const LandinPage = () => {
     setshowProduct(false)
     setshowWelcome(false)
     setShowAllProducts(false)
+    setShowAllFirms(false)
 
   }
   
@@ -77,6 +82,7 @@ const LandinPage = () => {
       setshowProduct(false)
       setshowWelcome(false)
       setShowAllProducts(false)
+      setShowAllFirms(false)
     }else{
       alert("please login");
       setshowLogin(true)
@@ -92,6 +98,7 @@ const LandinPage = () => {
       setshowProduct(true)
       setshowWelcome(false)
       setShowAllProducts(false)
+      setShowAllFirms(false)
     }else{
       alert("please login")
       setshowLogin(true)
@@ -106,6 +113,7 @@ const LandinPage = () => {
       setshowProduct(false)
       setshowWelcome(true)
       setShowAllProducts(false)
+      setShowAllFirms(false)
     }else{
       alert("please login")
       setshowLogin(true)
@@ -120,6 +128,25 @@ const LandinPage = () => {
       setshowProduct(false)
       setshowWelcome(false)
       setShowAllProducts(true)
+      setShowAllFirms(false)
+  
+  }else{
+      alert("please login")
+      setshowLogin(true)
+   }
+  }
+
+
+  //show all firms
+  const showAllFirmsHandler = ()=>{
+    if(showLogOut){
+      setshowRegister(false)
+      setshowLogin(false)
+      setshowFirm(false)
+      setshowProduct(false)
+      setshowWelcome(false)
+      setShowAllProducts(false)
+      setShowAllFirms(true)
   
   }else{
       alert("please login")
@@ -137,13 +164,18 @@ const LandinPage = () => {
             <Sidebar showFirmHandler={showFirmHandler} showProductHandler={showProductHandler} 
             showAllProductsHandler = {showAllProductsHandler}
             showFirmTitle={showFirmTitle}
+            showAllFirmsHandler={showAllFirmsHandler}
             />
             {showLogin && <Login showWelcomeHandler={showWelcomeHandler} /> }
             {showRegister && <Register showLoginHandler={showLoginHandler}/> }
             {showFirm &&  showLogOut && <Addfirm/> }
+
             {showProduct && showLogOut && <AddProduct /> }
             {/* //{showWelcome && <Welcome />} */}
             {showAllProducts && <AllProducts />}
+
+
+            {showAllFirms && showLogOut && <GetAllFirms />}
             </div>
             
         </section>
